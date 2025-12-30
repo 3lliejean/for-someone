@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #58181E;
+    font-family: serif;
+    overflow: hidden;
+}
+
+#scene {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.stage {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.stage.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#envelope-closed img {
+    max-width: 600px;
+    width: 90%;
+    cursor: pointer;
+}
+
+.hint {
+    position: absolute;
+    bottom: 15%;
+    font-size: 14px;
+    opacity: 0.6;
+    color: #f3efe8;
+}
+
+#envelope-open img {
+    max-width: 600px;
+    width: 90%;
+}
+
+#final-letter {
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.paper {
+    max-width: 700px;
+    min-height: 100%;
+    width: 90%;
+    background: #f9f5ec;
+    background-image: url("paper.jpg");
+    background-blend-mode: multiply;
+    background-size: cover;
+    padding: 60px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+    font-family: "EB Garamond", serif;
+    line-height: 1.7;
+    font-size: 18px;
+    position: relative;
+    top: 140%;
+}
+
+.stage {
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+#final-letter {
+    transform: scale(0.95);
+}
+
+#final-letter.active {
+    transform: scale(1);
+}
